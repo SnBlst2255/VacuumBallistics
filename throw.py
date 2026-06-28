@@ -42,11 +42,11 @@ while points <= 1:
 
 print("\n[i] Calculating...\n")
 
-V0x = speed * math.cos(math.radians(angle))
-V0y = speed * math.sin(math.radians(angle))
-time = (2 * V0y) / gravity
+v0x = speed * math.cos(math.radians(angle))
+v0y = speed * math.sin(math.radians(angle))
+time = (2 * v0y) / gravity
 flightRange = ((math.pow(speed, 2) * math.sin(math.radians(2*angle))))/gravity
-height = math.pow(V0y, 2) / (2 * gravity)
+height = math.pow(v0y, 2) / (2 * gravity)
 
 print("Input data:")
 print("Speed:", speed, "m/s")
@@ -54,8 +54,8 @@ print("Angle:", angle, "degrees")
 print("Gravity acceleration(g):", gravity, "m/s^2")
 print("Points:", points, "\n")
 
-print("Velocity projection onto the x-axis:", V0x, "m/s")
-print("Velocity projection onto the y-axis:", V0y, "m/s")
+print("Velocity projection onto the x-axis:", round(v0x, 2), "m/s")
+print("Velocity projection onto the y-axis:", round(v0y, 2), "m/s")
 print("Flight time:", round(time, 2), "sec")
 print("Flight range:", round(flightRange,2), "m")
 print("Maximum height:", round(height, 2), "m")
@@ -66,8 +66,8 @@ print(f"{'Point':<8}{'Time(sec)':<12}{'X-axis(m)':<12}{'Y-axis(m)':<12}")
 print(f"{1:<8}{'0':<12}{'0':<12}{'0':<12}")
 for i in range(2, points + 1):
     timePoint += interval
-    x = V0x * timePoint
-    y = V0y * timePoint - ((gravity * math.pow(timePoint, 2)) / 2)
+    x = abs(v0x * timePoint)
+    y = abs(v0y * timePoint - ((gravity * math.pow(timePoint, 2)) / 2))
     print(f"{i:<8}{timePoint:<12.2f}{x:<12.2f}{y:<12.2f}")
 
 print("\n[!] Values are rounded. Small calculation errors can occur.")
