@@ -18,6 +18,7 @@ A simple Python program for simulating projectile motion in a vacuum.
   - Y position
 - Validates user input
 - Supports any value of gravitational acceleration
+- Shows graph
 
 > [!NOTE]
 > The main idea behind this model is that projectile motion can be split into two independent motions: horizontal motion and vertical motion.
@@ -83,6 +84,8 @@ Point   Time(sec)   X-axis(m)   Y-axis(m)
 8       10.30       386.22      148.66
 9       11.77       441.40      84.95
 10      13.24       496.57      0.00
+
+*Graph*
 ```
 
 ## Installation
