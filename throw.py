@@ -1,4 +1,5 @@
 import math
+import plotext as plt
 
 print("[!] This program uses simplified model of a thrown object. This program does NOT calculate the air resistance.\n[i] Press Enter to continue.")
 input()
@@ -62,13 +63,32 @@ print("Maximum height:", round(height, 2), "m")
 
 interval = time / (points - 1)
 timePoint = 0
+
+x_points = []
+y_points = []
+
+x_points.append(0)
+y_points.append(0)
+
 print(f"{'Point':<8}{'Time(sec)':<12}{'X-axis(m)':<12}{'Y-axis(m)':<12}")
 print(f"{1:<8}{'0':<12}{'0':<12}{'0':<12}")
 for i in range(2, points + 1):
     timePoint += interval
     x = abs(v0x * timePoint)
     y = abs(v0y * timePoint - ((gravity * math.pow(timePoint, 2)) / 2))
+    x_points.append(x)
+    y_points.append(y)
     print(f"{i:<8}{timePoint:<12.2f}{x:<12.2f}{y:<12.2f}")
+
+print("\n")
+plt.scatter(x_points, y_points, color="white")
+plt.title("Object Trajectory")
+plt.xlabel("X, m")
+plt.ylabel("Y, m")
+plt.canvas_color("black")
+plt.axes_color("black")
+plt.ticks_color("white")
+plt.show()
 
 print("\n[!] Values are rounded. Small calculation errors can occur.")
 print("[i] The program has finished executing. Press Enter to exit.")
