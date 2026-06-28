@@ -84,3 +84,17 @@ Point   Time(sec)   X-axis(m)   Y-axis(m)
 9       11.77       441.40      84.95
 10      13.24       496.57      0.00
 ```
+
+## Installation
+
+Install the required library:
+
+```bash
+pip install plotext
+```
+
+Then run the program:
+
+```bash
+python throw.py
+```
