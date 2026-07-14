@@ -12,11 +12,19 @@ A simple Python program for simulating projectile motion in a vacuum.
   - Flight time
   - Maximum height
   - Flight range
+  - Kinetic energy
+  - Potential energy
+  - Momentum
+  - Speed
 - Generates a trajectory table:
+  - Point number
   - Time
   - X position
   - Y position
-- Validates user input
+  - Kinetic energy
+  - Potential energy
+  - Momentum
+  - Speed
 - Supports any value of gravitational acceleration
 - Shows graph
 
@@ -47,43 +55,68 @@ $$
 R=\frac{v_0^2\sin(2\alpha)}{g}
 $$
 
+### Kinetic energy
+
+$$
+E_k=\frac{mv^2}{2}
+$$
+
+### Potential energy
+
+$$
+E_p=mgh
+$$
+
+### Momentum
+
+$$
+p=mv
+$$
+
 Where:
 
-- $v_0$ — initial velocity (m/s)
-- $\alpha$ — launch angle
+- $m$ — object mass (kg)
+- $v$ — object speed (m/s)
+- $h$ — height above the launch point (m)
 - $g$ — acceleration due to gravity (m/s²)
-- $T$ — flight time
-- $H$ — maximum height
-- $R$ — flight range
+- $E_k$ — kinetic energy (J)
+- $E_p$ — potential energy (J)
+- $p$ — momentum (kg·m/s)
 
-## Example output
+> [!WARNING]
+> Furthermore, the current physical model assumes that the acceleration due to gravity is constant and that the Earth's surface is locally flat. These assumptions are valid for projectile motion over relatively short distances and at low altitudes. For long-range trajectories or high altitudes, the acceleration due to gravity decreases with altitude, and the curvature of the Earth can no longer be neglected.
+
+## Example Output
 
 ```text
 [i] Calculating...
 
 Input data:
-Speed: 75.0 m/s
-Angle: 60.0 degrees
-Gravity acceleration (g): 9.81 m/s²
-Points: 10
+Speed: 12.0 m/s
+Angle: 35.0 degrees
+Gravity acceleration(g): 9.8 m/s^2
+Points: 10 
 
-Velocity projection onto the x-axis: 37.5 m/s
-Velocity projection onto the y-axis: 64.95 m/s
-Flight time: 13.24 sec
-Flight range: 496.57 m
-Maximum height: 215.02 m
+Velocity projection onto the x-axis: 9.83 m/s
+Velocity projection onto the y-axis: 6.88 m/s
+Flight time: 1.4 sec
+Flight range: 13.81 m
+Maximum height: 2.42 m
+Initial momentum: 36.0 kg*m/s
+Initial kinetic energy: 216.0 J
+Gravity force: 29.4 N
 
-Point   Time(sec)   X-axis(m)   Y-axis(m)
-1       0.00        0.00        0.00
-2       1.47        55.17       84.95
-3       2.94        110.35      148.66
-4       4.41        165.52      191.13
-5       5.89        220.70      212.37
-6       7.36        275.87      212.37
-7       8.83        331.05      191.13
-8       10.30       386.22      148.66
-9       11.77       441.40      84.95
-10      13.24       496.57      0.00
+Point   Time(sec)   X-axis(m)   Y-axis(m)   E_k (J)     E_p (J)     p (kg * m/s)    V (m/s)     
+1       0           0           0           216.0       0           36.0            12.0        
+2       0.2         1.5         1.0         187.9       28.1        33.6            11.2        
+3       0.3         3.1         1.7         166.9       49.1        31.6            10.5        
+4       0.5         4.6         2.1         152.8       63.2        30.3            10.1        
+5       0.6         6.1         2.4         145.8       70.2        29.6            9.9         
+6       0.8         7.7         2.4         145.8       70.2        29.6            9.9         
+7       0.9         9.2         2.1         152.8       63.2        30.3            10.1        
+8       1.1         10.7        1.7         166.9       49.1        31.6            10.5        
+9       1.2         12.3        1.0         187.9       28.1        33.6            11.2        
+10      1.4         13.8        0.0         216.0       0.0         36.0            12.0       
 
 *Graph*
 ```
