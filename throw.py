@@ -11,7 +11,11 @@ def getData():
 
     while speed <= 0:
         print("1) Enter speed (m/s):")
-        speed = float(input("> "))
+        try:
+            speed = float(input("> "))
+        except ValueError:
+            print("[X] Please enter a number.")
+            continue
         if speed > 0:
             break
         else:
@@ -19,7 +23,11 @@ def getData():
 
     while mass <= 0:
         print("2) Enter mass (kg):")
-        mass = float(input("> "))
+        try:
+            mass = float(input("> "))
+        except ValueError:
+            print("[X] Please enter a number.")
+            continue
         if mass > 0:
             break;
         else:
@@ -27,7 +35,11 @@ def getData():
 
     while angle <= 0 or angle >= 90:
         print("3) Enter throw angle (degrees):")
-        angle = float(input("> "))
+        try:
+            angle = float(input("> "))
+        except ValueError:
+            print("[X] Please enter a number.")
+            continue
         if 0 < angle < 90:
             break
         else:
@@ -36,6 +48,11 @@ def getData():
     while gravity <= 0:
         print("4) Enter the value of the acceleration due to gravity (m/s^2):")
         gravity = float(input("> "))
+        try:
+            gravity = float(input("> "))
+        except ValueError:
+            print("[X] Please enter a number.")
+            continue
         if gravity > 0:
             break
         else:
@@ -43,7 +60,11 @@ def getData():
 
     while points <= 1:
         print("5) Enter the number of points for the trajectory table.")
-        points = int(input("> "))
+        try:
+            points = int(input("> "))
+        except ValueError:
+            print("[X] Please enter a number.")
+            continue
         if points > 1:
             break
         else:
