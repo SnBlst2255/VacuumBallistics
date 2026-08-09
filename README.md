@@ -120,6 +120,7 @@ Point   Time(sec)   X-axis(m)   Y-axis(m)   E_k (J)     E_p (J)     p (kg * m/s)
 
 *Graph*
 ```
+![Graph](https://i.ibb.co/bgWqHLDX/graph2.png)
 
 ## Installation
 

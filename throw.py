@@ -47,7 +47,6 @@ def getData():
 
     while gravity <= 0:
         print("4) Enter the value of the acceleration due to gravity (m/s^2):")
-        gravity = float(input("> "))
         try:
             gravity = float(input("> "))
         except ValueError:
